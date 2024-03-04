@@ -1,0 +1,21 @@
+.admin_header {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  background-color: grey;
+  position: static;
+}
+.admin_header .logo {
+  width: 20%;
+}
+.admin_header .logo .logo_image {
+  width: 100px;
+  height: 50px;
+}
+.admin_header .logo .logo_image img {
+  width: 100%;
+  height: 100%;
+}
+.admin_header .options {
+  width: 80%;
+}

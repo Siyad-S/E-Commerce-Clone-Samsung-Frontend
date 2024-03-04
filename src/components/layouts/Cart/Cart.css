@@ -1,0 +1,143 @@
+.cart {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.cart .cartProducts {
+  width: 55%;
+  margin-top: 50px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.cart .cartProducts .cartProduct {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #d9d5d5;
+}
+.cart .cartProducts .cartProduct:last-child {
+  border: none;
+}
+.cart .cartProducts .cartProduct .product_image {
+  width: 128px;
+  height: 95px;
+}
+.cart .cartProducts .cartProduct .product_image img {
+  width: 100%;
+  height: 100%;
+}
+.cart .cartProducts .cartProduct .product_content {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.cart .cartProducts .cartProduct .product_content .product_name {
+  display: flex;
+  flex: 1;
+}
+.cart .cartProducts .cartProduct .product_content .product_name h3 {
+  padding-top: 20px;
+  font-size: 16px;
+}
+.cart .cartProducts .cartProduct .product_content .product_price {
+  padding-top: 20px;
+  font-size: 18px;
+}
+.cart .cartProducts .cartProduct .product_content .product_price h3 {
+  font-size: 17px;
+  font-weight: 600;
+}
+.cart .cartProducts .cartProduct .product_content .product_price .discount {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+.cart .cartProducts .cartProduct .product_content .product_price .discount .discount_price {
+  color: #2189ff;
+}
+.cart .cartProducts .cartProduct .deleteBtn {
+  display: flex;
+  align-items: end;
+}
+.cart .cartProducts .cartProduct .deleteBtn i {
+  cursor: pointer;
+  color: rgb(194, 190, 190);
+}
+.cart .productPrice {
+  width: 30%;
+}
+.cart .productPrice .priceShower {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 24px 36px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+}
+.cart .productPrice .priceShower .total_price {
+  display: flex;
+  border-bottom: 1px solid rgb(205, 201, 201);
+  padding-bottom: 10px;
+}
+.cart .productPrice .priceShower .total_price h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+.cart .productPrice .priceShower .total_price h6 {
+  font-size: 11px;
+}
+.cart .productPrice .priceShower .total_price p {
+  font-size: 12px;
+  color: #2189ff;
+  font-weight: 600;
+}
+.cart .productPrice .priceShower .total_price .price {
+  flex: 1;
+}
+.cart .productPrice .priceShower .total_price .price .total_shower {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: end;
+}
+.cart .productPrice .priceShower .payBtn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px !important;
+}
+.cart .productPrice .priceShower .payBtn .total_discount {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.cart .productPrice .priceShower .payBtn .total_discount p {
+  font-size: 13px;
+}
+.cart .productPrice .priceShower .payBtn .total_discount h5 {
+  color: #2189ff;
+}
+.cart .productPrice .priceShower .payBtn .shipping_charge {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.cart .productPrice .priceShower .payBtn .shipping_charge p {
+  font-size: 13px;
+}
+.cart .productPrice .priceShower .payBtn .total_pay_btn button {
+  width: 100%;
+  border-radius: 20px;
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18.62px;
+  text-align: center;
+  padding: 10px;
+  font-weight: 700;
+}

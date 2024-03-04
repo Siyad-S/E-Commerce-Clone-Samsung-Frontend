@@ -1,0 +1,165 @@
+.singleProduct_view .header_bar {
+  height: 80px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+}
+.singleProduct_view .header_bar h3 {
+  color: white;
+  font-size: 22px;
+  margin-left: 15px !important;
+}
+.singleProduct_view .product_shower {
+  display: flex;
+  margin-bottom: 50px !important;
+}
+.singleProduct_view .product_shower .images_shower {
+  width: 50%;
+}
+.singleProduct_view .product_shower .images_shower .image_section {
+  display: flex;
+  position: relative;
+}
+.singleProduct_view .product_shower .images_shower .image_section .main_image {
+  width: 100%;
+  height: 480px;
+}
+.singleProduct_view .product_shower .images_shower .image_section .main_image img {
+  width: 100%;
+  height: 100%;
+}
+.singleProduct_view .product_shower .images_shower .image_section .next_btn {
+  position: absolute;
+}
+.singleProduct_view .product_shower .images_shower .sub_images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.singleProduct_view .product_shower .images_shower .sub_images .image_count {
+  display: flex;
+  align-items: start;
+}
+.singleProduct_view .product_shower .images_shower .sub_images .image_count h5 {
+  font-size: 17px;
+  font-weight: 600;
+}
+.singleProduct_view .product_shower .images_shower .sub_images .images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.singleProduct_view .product_shower .images_shower .sub_images .images div {
+  border: 1px solid rgb(213, 211, 211);
+  border-radius: 6px;
+  width: 70px;
+  height: 70px;
+}
+.singleProduct_view .product_shower .images_shower .sub_images .images div img {
+  width: 100%;
+  height: 100%;
+}
+.singleProduct_view .products_details {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-left: 70px !important;
+}
+.singleProduct_view .products_details .title_heart {
+  display: flex;
+  align-items: center;
+  margin: 50px 0px 0px 0px !important;
+  gap: 20px;
+}
+.singleProduct_view .products_details .title_heart h3 {
+  font-size: 22px;
+}
+.singleProduct_view .products_details .title_heart i {
+  font-size: 25px;
+  color: #cecaca;
+  font-weight: 400;
+}
+.singleProduct_view .products_details .features_list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.singleProduct_view .products_details .features_list p {
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
+  width: 80%;
+}
+.singleProduct_view .products_details .buy_options {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #ddd;
+  padding: 30px;
+  border-radius: 5px;
+}
+.singleProduct_view .products_details .buy_options .wish_add {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.singleProduct_view .products_details .buy_options .buy_title h5 {
+  font-weight: bold;
+  font-size: 16px;
+}
+.singleProduct_view .products_details .buy_options .feature_price {
+  display: flex;
+  justify-content: space-between;
+}
+.singleProduct_view .products_details .buy_options .feature_price .feature {
+  display: flex;
+}
+.singleProduct_view .products_details .buy_options .feature_price .feature span {
+  font-size: 14px;
+}
+.singleProduct_view .products_details .buy_options .feature_price .price {
+  display: flex;
+  flex-direction: column;
+}
+.singleProduct_view .products_details .buy_options .feature_price .price div {
+  display: flex;
+  display: flex;
+  justify-content: end;
+}
+.singleProduct_view .products_details .buy_options .feature_price .price div p {
+  font-size: 11px;
+}
+.singleProduct_view .products_details .buy_options .feature_price .price div h6 {
+  font-size: 13px;
+}
+.singleProduct_view .products_details .buy_options .total_price {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid black;
+  padding: 20px 0px;
+}
+.singleProduct_view .products_details .buy_options .total_price h6 {
+  font-size: 15px;
+  font-weight: 600;
+}
+.singleProduct_view .products_details .buy_options .buy_option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.singleProduct_view .products_details .buy_options .buy_option button {
+  width: 80%;
+  padding: 10px 24px 11px 24px;
+  border-radius: 22px;
+  border: transparent;
+  background-color: #2189ff;
+  color: white;
+  font-weight: 600;
+}

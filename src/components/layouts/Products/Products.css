@@ -1,0 +1,74 @@
+.product_page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 70px;
+  margin-top: 30px !important;
+}
+.product_page .product_card {
+  background-color: #f7f7f7;
+  padding: 15px 20px;
+  border-radius: 20px;
+}
+.product_page .product_card .add_wishlist {
+  display: flex;
+  justify-content: end;
+  padding-bottom: 10px;
+}
+.product_page .product_card .image {
+  width: 216px;
+  height: 216px;
+}
+.product_page .product_card .image img {
+  width: 100%;
+  height: 100%;
+}
+.product_page .product_card .product_name {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0px;
+  font-size: 17px;
+  font-weight: bold;
+  color: black;
+}
+.product_page .product_card .price {
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: bold;
+  color: black;
+}
+.product_page .product_card .discount {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.product_page .product_card .discount p {
+  font-size: 12px;
+}
+.product_page .product_card .discount h5 {
+  font-size: 13px;
+  display: flex;
+  gap: 2px;
+  color: #2189ff;
+}
+.product_page .product_card .buyNow_btn {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px;
+}
+.product_page .product_card .buyNow_btn button {
+  min-width: 160px;
+  background: black;
+  color: white;
+  border: 1px solid black;
+  padding: 10px 24px 11px 24px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.product_page .product_card .buyNow_btn button:hover {
+  background: grey;
+  border: grey;
+  cursor: pointer;
+}

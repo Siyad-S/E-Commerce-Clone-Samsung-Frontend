@@ -1,0 +1,86 @@
+.product_page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 30px !important;
+
+    .product_card {
+        background-color: #f7f7f7;
+        padding: 15px 20px;
+        border-radius: 20px;
+
+        .add_wishlist {
+            display: flex;
+            justify-content: end;
+            padding-bottom: 10px;
+        }
+
+        .image {
+            width: 216px;
+            height: 216px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .product_name {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0px;
+            font-size: 17px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .price {
+            display: flex;
+            justify-content: center;
+            font-size: 17px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .discount {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+
+            p {
+                font-size: 12px;
+            }
+
+            h5 {
+                font-size: 13px;
+                display: flex;
+                gap: 2px;
+                color: #2189ff;
+            }
+        }
+
+        .buyNow_btn {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0px;
+
+            button {
+                min-width: 160px;
+                background: black;
+                color: white;
+                border: 1px solid black;
+                padding: 10px 24px 11px 24px;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: 600;
+
+                &:hover {
+                    background: grey;
+                    border: grey;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

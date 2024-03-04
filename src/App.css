@@ -1,0 +1,10 @@
+* {
+  margin: 0 !important;
+  font-family: 'Open Sans', sans-serif;
+  user-select: none;
+}
+.container {
+  max-width: 1540px;
+  margin: auto !important;
+}
+

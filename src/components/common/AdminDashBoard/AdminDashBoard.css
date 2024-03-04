@@ -1,0 +1,24 @@
+.dash_board {
+  background-color: #20263a;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  min-height: 100vh;
+}
+.dash_board .dashboard_options {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  margin-top: 100px !important;
+}
+.dash_board .dashboard_options li {
+  font-weight: 600;
+  padding: 10px;
+  color: white;
+  background-color: #222c54;
+  border-radius: 7px;
+}
+.dash_board .dashboard_options li:hover {
+  background-color: #2e375b;
+  cursor: pointer;
+}
