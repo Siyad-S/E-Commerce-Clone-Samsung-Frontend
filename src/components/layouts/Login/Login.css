@@ -14,13 +14,17 @@
 .login_page .login_form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px !important;
 }
 .login_page .login_form .input_div {
   display: flex;
   flex-direction: column;
   width: 450px;
   border-bottom: 1px solid black;
+}
+.login_page .login_form .input_div .error {
+  color: red;
+  font-size: 13px;
 }
 .login_page .login_form .input_div label {
   background: white;
@@ -32,6 +36,9 @@
 }
 .login_page .login_form .input_div input:focus {
   outline: none;
+}
+.login_page .userExist {
+  color: red;
 }
 .login_page .login_btn {
   margin-top: 50px;

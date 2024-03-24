@@ -1,50 +1,79 @@
 import React from "react";
 import "./Signup.css";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser, setRegisterUser } from "../../../Redux/Slices/HomePageSlice";
+import { registerUser, getAllUsers } from "../../../Redux/Slices/HomePageSlice";
+import { useNavigate } from "react-router-dom";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 const Signup = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.homeSlice.registerFormData);
+  const allUsers = useSelector((state) => state.homeSlice.allUsers.usersData) || [];
+  const navigate = useNavigate();
 
-  const handleUserRegister = (e) => {
-    dispatch(setRegisterUser({
-      ...user,
-      [e.target.id]: e.target.value,
-    }));
+  React.useEffect(() => {
+    dispatch(getAllUsers());
+  }, [dispatch]);
+
+  const handleSubmit = (values, { setSubmitting }) => {
+    const userExists = allUsers.some((user) => user.email === values.email);
+    if (!userExists) {
+      dispatch(registerUser({ userData: values }));
+      navigate("/login");
+    } else {
+      setSubmitting(false);
+    }
   };
-
-  const submitRegister = () => {
-    dispatch(registerUser(user));
-  };
-
-  console.log(user);
 
   return (
     <div className="signup_page">
       <h3>Signup</h3>
-      <div className="signup_form">
-        <div className="input_div">
-          <label htmlFor="userName">User name</label>
-          <input type="text" name="userName" id="userName" value={user.userName} onChange={handleUserRegister} />
-        </div>
-        <div className="input_div">
-          <label htmlFor="phone">Mobile number</label>
-          <input type="text" name="phone" id="phone" value={user.phone} onChange={handleUserRegister} />
-        </div>
-        <div className="input_div">
-          <label htmlFor="email">Email</label>
-          <input type="text" name="email" id="email" value={user.email} onChange={handleUserRegister} />
-        </div>
-        <div className="input_div">
-          <label htmlFor="password">Password</label>
-          <input type="text" name="password" id="password" value={user.password} onChange={handleUserRegister} />
-        </div>
-      </div>
+      <Formik
+        initialValues={{
+          userName: "",
+          phone: "",
+          email: "",
+          password: ""
+        }}
+        validationSchema={Yup.object({
+          userName: Yup.string().required("User name is required"),
+          phone: Yup.string().required("Phone number is required"),
+          email: Yup.string().email("Invalid email address").required("Email is required"),
+          password: Yup.string().required("Password is required")
+        })}
+        onSubmit={handleSubmit}
+      >
+        <Form className="signup_form">
+          <div className="input_div">
+            <label htmlFor="userName">User name</label>
+            <Field type="text" name="userName" id="userName" />
+            <ErrorMessage name="userName" component="div" className="error" />
+          </div>
+          <div className="input_div">
+            <label htmlFor="phone">Mobile number</label>
+            <Field type="text" name="phone" id="phone" />
+            <ErrorMessage name="phone" component="div" className="error" />
+          </div>
+          <div className="input_div">
+            <label htmlFor="email">Email</label>
+            <Field type="text" name="email" id="email" />
+            <ErrorMessage name="email" component="div" className="error" />
+          </div>
+          <div className="input_div">
+            <label htmlFor="password">Password</label>
+            <Field type="password" name="password" id="password" />
+            <ErrorMessage name="password" component="div" className="error" />
+          </div>
 
-      <div className="signup_btn">
-        <button onClick={submitRegister}>Sign up</button>
-      </div>
+          <div className="signup_btn">
+            <button type="submit">Sign up</button>
+          </div>
+        </Form>
+      </Formik>
+
+      <p>
+        Already have an account? <span onClick={() => navigate("/login")}>Login</span>
+      </p>
     </div>
   );
 };

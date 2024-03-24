@@ -5,6 +5,7 @@ import {
   getSubCategory,
   fetchProducts
 } from "../../../Redux/Slices/HomePageSlice";
+import { getBanners } from "../../../Redux/Slices/AdminSlice"
 import { useDispatch } from "react-redux";
 
 const Modal = ({ message, setOpenModal, name }) => {
@@ -21,6 +22,10 @@ const Modal = ({ message, setOpenModal, name }) => {
     }
     if (name === "Product") {
       dispatch(fetchProducts());
+      setOpenModal(false);
+    }
+    if (name === "Banner") {
+      dispatch(getBanners());
       setOpenModal(false);
     }
   };

@@ -23,6 +23,11 @@
             width: 450px;
             border-bottom: 1px solid black;
 
+            .error {
+                color: red;
+                font-size: 13px;
+            }
+
             label {
                 background: white;
                 font-size: 11px;
@@ -36,6 +41,10 @@
                 }
             }
         }
+    }
+
+    .user_exists {
+        color: red;
     }
 
     .signup_btn {

@@ -22,6 +22,10 @@
   width: 450px;
   border-bottom: 1px solid black;
 }
+.signup_page .signup_form .input_div .error {
+  color: red;
+  font-size: 13px;
+}
 .signup_page .signup_form .input_div label {
   background: white;
   font-size: 11px;
@@ -32,6 +36,9 @@
 }
 .signup_page .signup_form .input_div input:focus {
   outline: none;
+}
+.signup_page .user_exists {
+  color: red;
 }
 .signup_page .signup_btn {
   margin-top: 50px;

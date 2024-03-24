@@ -71,37 +71,47 @@ export const deleteCategory = createAsyncThunk("deleteCategory", async (id) => {
 });
 
 export const addSubCategory = createAsyncThunk(
-    "addSubCategory", async ({subCatData}) => {
-      try {
-        const response = await axios.post(`http://localhost:5001/sub_category`, subCatData )
-        console.log(response.data);
-        return response.data
-      } catch (error) {
-        console.log(error.message)
-      }
-    }
-)
-
-export const editSubCategory = createAsyncThunk(
-  "editSubCategory", async ({id, subCatData}) => {
+  "addSubCategory",
+  async ({ subCatData }) => {
     try {
-      const response = await axios.put(`http://localhost:5001/sub_category/${id}`, subCatData )
+      const response = await axios.post(
+        `http://localhost:5001/sub_category`,
+        subCatData
+      );
       console.log(response.data);
-      return response.data
+      return response.data;
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
   }
-)
+);
+
+export const editSubCategory = createAsyncThunk(
+  "editSubCategory",
+  async ({ id, subCatData }) => {
+    try {
+      const response = await axios.put(
+        `http://localhost:5001/sub_category/${id}`,
+        subCatData
+      );
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+);
 
 export const getSingleSubCategory = createAsyncThunk(
   "getSingleSubCategory",
-  async ({Id}) => {
+  async ({ Id }) => {
     try {
-      const response = await axios.get(`http://localhost:5001/sub_category/${Id}`);
+      const response = await axios.get(
+        `http://localhost:5001/sub_category/${Id}`
+      );
       return response.data;
     } catch (error) {
-      console.log( error.response );
+      console.log(error.response);
     }
   }
 );
@@ -110,82 +120,144 @@ export const deleteSubCategory = createAsyncThunk(
   "deleteSubCategory",
   async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:5001/sub_category/${id}`);
+      const response = await axios.delete(
+        `http://localhost:5001/sub_category/${id}`
+      );
       return response.data;
     } catch (error) {
-      console.log( error.response );
-    }   
+      console.log(error.response);
+    }
   }
-)
+);
 
 export const postProduct = createAsyncThunk(
-  "postProduct", async (productData) => {
+  "postProduct",
+  async (productData) => {
     try {
-      const response = await axios.post('http://localhost:5001/product', productData);
-      return response.data
+      const response = await axios.post(
+        "http://localhost:5001/product",
+        productData
+      );
+      return response.data;
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
   }
-)
+);
 
 export const editProduct = createAsyncThunk(
-  "editProduct", async ({productData, id}) => {
+  "editProduct",
+  async ({ productData, id }) => {
     try {
-      const response = await axios.put(`http://localhost:5001/product/${id}`, productData);
-      return response.data
+      const response = await axios.put(
+        `http://localhost:5001/product/${id}`,
+        productData
+      );
+      return response.data;
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
   }
-)
+);
 
 export const deleteProduct = createAsyncThunk(
   "deleteProduct",
-  async ({Id}) => {
+  async ({ Id }) => {
     try {
-      const response = await axios.delete(`http://localhost:5001/product/${Id}`);
+      const response = await axios.delete(
+        `http://localhost:5001/product/${Id}`
+      );
       return response.data;
     } catch (error) {
-      console.log( error.response );
-    }   
-  }
-)
-
-export const getUsers = createAsyncThunk(
-  "getUsers", async () => {
-    try {
-      const response = await axios.get(`http://localhost:5001/user`);
-      return response.data
-    } catch (error) {
-      console.log(error.message)
+      console.log(error.response);
     }
   }
-)
+);
 
-export const getAllOrders = createAsyncThunk(
-  "getAllOrders", async () => {
+export const getUsers = createAsyncThunk("getUsers", async () => {
+  try {
+    const response = await axios.get(`http://localhost:5001/user`);
+    return response.data;
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+export const getAllOrders = createAsyncThunk("getAllOrders", async () => {
+  try {
+    const response = await axios.get(`http://localhost:5001/order`);
+    return response.data;
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+export const getUser = createAsyncThunk("getUser", async ({ Id }) => {
+  try {
+    const response = await axios.get(`http://localhost:5001/user/${Id}`);
+    return response.data;
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+export const getBanners = createAsyncThunk("getBanners", async () => {
+  try {
+    const response = await axios.get(`http://localhost:5001/banner`);
+    return response.data;
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+export const getBanner = createAsyncThunk("getBanner", async ({ id }) => {
+  try {
+    const response = await axios.get(`http://localhost:5001/banner/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+export const postBanner = createAsyncThunk(
+  "postBanner",
+  async ({ bannerData }) => {
+    console.log(bannerData);
     try {
-      const response = await axios.get(`http://localhost:5001/order`);
-      return response.data
+      const response = await axios.post(
+        `http://localhost:5001/banner`,
+        bannerData
+      );
+      return response.data;
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
   }
-)
+);
 
-export const getUser = createAsyncThunk(
-  "getUser", async ({Id}) => {
+export const updateBanner = createAsyncThunk(
+  "updateBanner",
+  async ({ id, bannerData }) => {
     try {
-      const response = await axios.get(`http://localhost:5001/user/${Id}`);
-      return response.data
+      const response = await axios.put(
+        `http://localhost:5001/banner/${id}`,
+        bannerData
+      );
+      return response.data;
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
   }
-)
+);
 
-
+export const deleteBanner = createAsyncThunk("deleteBanner", async (id) => {
+  try {
+    const response = await axios.delete(`http://localhost:5001/banner/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log(error.message);
+  }
+});
 
 const adminPanelSlice = createSlice({
   name: "adminSlice",
@@ -213,11 +285,13 @@ const adminPanelSlice = createSlice({
       price: "",
       discount: "",
       description: "",
-      product_images: []
+      product_images: [],
     },
     allUsers: [],
     allOrders: [],
-    user : {},
+    user: {},
+    banners: [],
+    banner: {},
   },
   reducers: {
     setAdminLoginForm: (state, action) => {
@@ -242,52 +316,58 @@ const adminPanelSlice = createSlice({
       state.subCategoryAddForm.subCategory_image = action.payload;
     },
     setEditSubCatForm: (state, action) => {
-      state.subCategoryAddForm = {...action.payload}
+      state.subCategoryAddForm = { ...action.payload };
     },
     setEditSubCatImage: (state, action) => {
       state.subCategoryAddForm.subCategory_image = action.payload;
     },
     setAddProductForm: (state, action) => {
-      state.productForm = {...action.payload}
+      state.productForm = { ...action.payload };
     },
     setProductImages: (state, action) => {
-      state.productForm.product_images = {...action.payload}
+      state.productForm.product_images = { ...action.payload };
     },
     setProductCat: (state, action) => {
-      state.productForm.category_id = action.payload
+      state.productForm.category_id = action.payload;
     },
     setEditProductForm: (state, action) => {
-      state.productForm = {...action.payload}
+      state.productForm = { ...action.payload };
     },
     setEditProductImages: (state, action) => {
-      state.productForm.product_images = {...action.payload}
+      state.productForm.product_images = { ...action.payload };
     },
     setEditProductCat: (state, action) => {
-      state.productForm.category_id = action.payload
-    }
+      state.productForm.category_id = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getSingleCategory.fulfilled, (state, action) => {
-        state.singleCategoryData = {...action.payload};
+        state.singleCategoryData = { ...action.payload };
       })
       .addCase(getSingleSubCategory.fulfilled, (state, action) => {
-        state.singleSubCatData = {...action.payload};
+        state.singleSubCatData = { ...action.payload };
       })
       .addCase(postProduct.fulfilled, (state, action) => {
-        state.productForm = {...action.payload}
+        state.productForm = { ...action.payload };
       })
       .addCase(editProduct.fulfilled, (state, action) => {
-        state.productForm = {...action.payload}
+        state.productForm = { ...action.payload };
       })
       .addCase(getUsers.fulfilled, (state, action) => {
-        state.allUsers = {...action.payload}
+        state.allUsers = { ...action.payload };
       })
       .addCase(getAllOrders.fulfilled, (state, action) => {
-        state.allOrders = {...action.payload}
+        state.allOrders = { ...action.payload };
       })
       .addCase(getUser.fulfilled, (state, action) => {
-        state.user = {...action.payload}
+        state.user = { ...action.payload };
+      })
+      .addCase(getBanners.fulfilled, (state, action) => {
+        state.banners = { ...action.payload };
+      })
+      .addCase(getBanner.fulfilled, (state, action) => {
+        state.banner = { ...action.payload };
       })
       .addCase(getSingleCategory.rejected, (state, action) => {
         state.isError = true;
@@ -324,6 +404,16 @@ const adminPanelSlice = createSlice({
         console.error(error);
         console.log("Error occured on getting of single user");
       })
+      .addCase(getBanners.rejected, (state, action) => {
+        state.isError = true;
+        console.error(error);
+        console.log("Error occured on getting of banners");
+      })
+      .addCase(getBanner.rejected, (state, action) => {
+        state.isError = true;
+        console.error(error);
+        console.log("Error occured on getting of banner");
+      });
   },
 });
 
@@ -342,7 +432,7 @@ export const {
   setProductCat,
   setEditProductForm,
   setEditProductImages,
-  setEditProductCat
+  setEditProductCat,
 } = adminPanelSlice.actions;
 
 export default adminPanelSlice.reducer;

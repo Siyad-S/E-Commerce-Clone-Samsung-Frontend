@@ -8,9 +8,6 @@ import AdminDashBoard from "../../common/AdminDashBoard/AdminDashBoard";
 import {
   editCategory,
   getSingleCategory,
-  setEditCatForm,
-  setEditCatImage,
-  deleteCategory,
   addCategory,
   setAddCategoryForm,
   setAddCategoryImage,

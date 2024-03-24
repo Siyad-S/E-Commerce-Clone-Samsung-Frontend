@@ -11,6 +11,7 @@ const AdminDashBoard = () => {
         <li onClick={() => navigate("/admin-home")}>Categories</li>
         <li onClick={() => navigate("/admin-users")}>Users</li>
         <li onClick={() => navigate("/admin-allOrders")}>Orders</li>
+        <li onClick={() => navigate("/banner")}>Banners</li>
       </ul>
     </div>
   );

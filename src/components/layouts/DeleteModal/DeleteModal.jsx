@@ -9,6 +9,8 @@ import {
   deleteProduct,
   deleteCategory,
   deleteSubCategory,
+  deleteBanner,
+  getBanners,
 } from "../../../Redux/Slices/AdminSlice";
 import { useDispatch } from "react-redux";
 
@@ -16,21 +18,24 @@ const Modal = ({ name, id, setDeleteModal }) => {
   const dispatch = useDispatch();
   const [openChildModal, setOpenChildModal] = useState(false);
   const [parentModal, setParentModal] = useState(true);
-  console.log("hei");
 
   const refreshFunction = async () => {
     switch (name) {
       case "Category":
-        setOpenChildModal(false);
         await dispatch(fetchCategories());
+        setOpenChildModal(false);
         break;
       case "Sub Category":
-        setOpenChildModal(false);
         await dispatch(getSubCategory());
+        setOpenChildModal(false);
         break;
       case "Product":
-        setOpenChildModal(false);
         await dispatch(fetchProducts());
+        setOpenChildModal(false);
+        break;
+      case "Banner":
+        await dispatch(getBanners());
+        setOpenChildModal(false);
         break;
       default:
         console.log("Invalid name:", name);
@@ -48,6 +53,9 @@ const Modal = ({ name, id, setDeleteModal }) => {
         break;
       case "Product":
         dispatch(deleteProduct({ Id: id }));
+        break;
+      case "Banner":
+        dispatch(deleteBanner(id));
         break;
       default:
         console.log("Invalid name:", name);
@@ -103,7 +111,7 @@ const Modal = ({ name, id, setDeleteModal }) => {
               <h3>The {name} Deleted Successfully</h3>
             </div>
             <div className="modal_buttons">
-              <button onClick={refreshFunction}>Ok</button>
+              <button onClick={() => refreshFunction()}>Ok</button>
             </div>
           </div>
           <div className="overlay"></div>

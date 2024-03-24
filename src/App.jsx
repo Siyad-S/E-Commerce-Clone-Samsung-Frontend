@@ -17,6 +17,7 @@ import AdminUserDisplayer from "./components/layouts/AdminUserDisplayer/AdminUse
 import AdminUserMore from "./components/layouts/AdminUserMore/AdminUserMore";
 import UserOrders from "./components/layouts/UserOrders/UserOrders";
 import AdminAllOrders from "./components/layouts/AdminAllOrders/AdminAllOrders";
+import Banner from "./components/layouts/Banners/Banners";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
           ></Route>
           <Route path="/user-orders" element={<UserOrders />}></Route>
           <Route path="/admin-allOrders" element={<AdminAllOrders />}></Route>
+          <Route path="/banner" element={<Banner />}></Route>
         </Routes>
       </div>
     </div>

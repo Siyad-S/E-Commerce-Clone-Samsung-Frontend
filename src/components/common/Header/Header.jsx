@@ -10,7 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import Login from "../../layouts/Login/Login";
 import { Cookies } from 'react-cookie';
-
+import SearchModal from "../../layouts/searchModal/searchModal";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -29,6 +29,7 @@ const Header = () => {
   const [subCat_boolean, setSubCat_boolean] = useState();
   const [userBoolean, setUserBoolean] = useState(false);
   const cookies = new Cookies();
+  const [openSearch, setOpenSearch] = useState(false)
 
 
   useEffect(() => {
@@ -128,7 +129,7 @@ const Header = () => {
             </div>
           </div>
           <div className="access_logos">
-            <i className="material-symbols-outlined">search</i>
+            <i className="material-symbols-outlined" onClick={() => setOpenSearch(true)}>search</i>
             <i
               onClick={handleCartEntrance}
               className="material-symbols-outlined"
@@ -151,6 +152,8 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      {openSearch && <SearchModal setOpenSearch={setOpenSearch} />}
+      
     </>
   );
 };

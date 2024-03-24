@@ -11,7 +11,7 @@ const PaymentBtn = ({ productsInCart, user, totalPrice }) => {
     dispatch(
       placeOrder({
         cartData: productsInCart[0].cartDetails,
-        userId: user._id,
+        userId: user,
         totalPrice: totalPrice,
       })
     );

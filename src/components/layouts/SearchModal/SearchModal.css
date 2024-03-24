@@ -1,0 +1,69 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7921568627);
+  z-index: 999;
+}
+
+.close_btn {
+  z-index: 1000;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.close_btn i {
+  font-size: 45px;
+  color: white;
+}
+
+.search_modal {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 40%;
+}
+.search_modal .search_modal_title {
+  display: flex;
+  justify-content: center;
+}
+.search_modal .search_modal_title h1 {
+  font-size: 40px;
+  color: white;
+}
+.search_modal .search_data {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0px 20px 20px 20px;
+  border-radius: 10px;
+  gap: 10px;
+}
+.search_modal .search_data ul li {
+  font-size: 13px;
+}
+.search_modal .search_data ul li:hover {
+  cursor: pointer;
+}
+.search_modal .search_data .search_input {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
+}
+.search_modal .search_data .search_input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px dashed black;
+}

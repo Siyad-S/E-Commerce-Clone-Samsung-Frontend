@@ -15,13 +15,18 @@
     .login_form {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 25px !important;
         
         .input_div {
             display: flex;
             flex-direction: column;
             width: 450px;
             border-bottom: 1px solid black;
+
+            .error {
+                color: red;
+                font-size: 13px;
+            }
 
             label {
                 background: white;
@@ -36,6 +41,10 @@
                 }
             }
         }
+    }
+
+    .userExist {
+        color: red;
     }
 
     .login_btn {
